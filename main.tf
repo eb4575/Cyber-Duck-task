@@ -14,7 +14,7 @@ resource "aws_security_group" "rds_security_group" {
 
 resource "aws_db_subnet_group" "db_subnet_group" {
   name       = "my-db-subnet-group"
-  subnet_ids = ["subnet-a", "subnet-b", "subnet-c"]
+  subnet_ids = ["subnet-a07523fb", "subnet-76cec63f"]
 }
 
 resource "aws_db_instance" "db_instance" {
@@ -25,7 +25,7 @@ resource "aws_db_instance" "db_instance" {
   allocated_storage     = 100
   storage_type          = "gp2"
   username              = "admin"
-  password              = "admin"
+  password              = "admin123"
   db_subnet_group_name  = aws_db_subnet_group.db_subnet_group.name
   vpc_security_group_ids = [aws_security_group.rds_security_group.id]
 	
